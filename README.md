@@ -7,7 +7,7 @@
 ## Data Structures and Constructs
 
 ### Ram(Primary Memory)
-<p>The primary memory is simulated using a python List of Lists. There are a total of ten memory address spaces and each sapce consists of 8 bits. The first three bits int he List is used for the instruction opcode with the following five bits used for the stored value.</p>
+<p>The primary memory is simulated using a python List of Lists. There are a total of ten memory address spaces and each space consists of 8 bits. The first three bits int he List is used for the instruction opcode with the following five bits used to store a given value.</p>
 
 ```
 memory = [
