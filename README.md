@@ -41,6 +41,17 @@ def to_binary(value):
 
 <p><b>get_from_ram:</b> The get_from_ram is used to simulate the native process of fetching address values from ram. It works by taking the current memory address register(mar. It passes the mar to the to_binary fucntion to  get an integer repersentation and then passes it into the memory List to retrive a given index location. This is wrapped in a try except that catches out of range indexs and Halts the System if it attempts to access an out of bounds memory location.</p>
 
+```
+def get_from_ram():
+    try:
+        location = to_binary(mar)
+        return memory[location]
+    except IndexError:
+        print("\n", "Memory Address out of Range halting")
+        halt = True
+```
+
+
 ### Fetch:
 
 ### Decode:
