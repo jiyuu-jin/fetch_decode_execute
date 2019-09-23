@@ -41,7 +41,7 @@ def to_binary(value):
 <br/>
 
 
-<p><b>get_from_ram:</b> The get_from_ram is used to simulate the native process of fetching address values from ram. It works by taking the current memory address register(mar. It passes the mar to the to_binary fucntion to  get an integer repersentation and then passes it into the memory List to retrive a given index location. This is wrapped in a try except that catches out of range indexs and Halts the System if it attempts to access an out of bounds memory location.</p>
+<p><b>get_from_ram:</b> The get_from_ram fucntion is used to simulate the native process of fetching address values from ram. It works by taking the current memory address register(mar. It passes the mar to the to_binary fucntion to  get an integer repersentation and then passes it into the memory List to retrive a given index location. This is wrapped in a try except that catches out of range indexs and Halts the System if it attempts to access an out of bounds memory location.</p>
 
 ```
 def get_from_ram():
@@ -54,7 +54,7 @@ def get_from_ram():
 ```
 <br/>
 
-<p><b>update_program_counter:</b> The update_program_counter is used to update the program counter(pc) to either the next address or another jumped to memory location.</p>
+<p><b>update_program_counter:</b> The update_program_counter function is used to update the program counter(pc) to either the next address or another jumped to memory location.</p>
 
 ```
 def update_program_counter(value=False):
@@ -65,7 +65,16 @@ def update_program_counter(value=False):
     res2 = list(map(int, list(bin((1 << 8) + binary))[-8:]))
 
     return res2
-```    
+``` 
+<br/>
+
+<p><b>decode_opcode:</b> The decode_opcode fucntion is used to decode the opcode from the first three bits of a given memory location. It works by passing an address value to the to_binary function and then bitshifts the returned value by 5 to obtain the Opcode for an instruction.</p>
+
+``` 
+def decode_opcode(address_value):
+    address_value_binary = to_binary(address_value) >> 5
+    return list(map(int, list(bin((1 << 8) + address_value_binary))[-3:]))
+``` 
 
 ### Fetch:
 
