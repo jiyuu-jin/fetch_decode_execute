@@ -31,7 +31,7 @@ memory = [
 
 ### Helper Functions
 
-<p><b>to_binary:</b> The to_binary function is used convert the 8 bit List of integers to a base two integer value. It works by looping throught the given List and conncatinating each Index value to a string. That string is then casted to a base two integer.</p>
+<p><b>to_binary:</b> The to_binary function is used to convert an 8 bit List of integers to a base two integer value. It works by looping throught the given List and conncatinating each Index value to a string. That string is then casted to a base two integer.</p>
 
 ### Fetch:
 
