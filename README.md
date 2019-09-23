@@ -52,6 +52,7 @@ def get_from_ram():
         print("\n", "Memory Address out of Range halting")
         halt = True
 ```
+<br/>
 
 
 ### Fetch:
