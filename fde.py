@@ -5,15 +5,10 @@ def to_binary(value):
     return int("".join(str(x) for x in value), 2)
 
 
-#def LOAD(location):
-#    return [0, 0, 1].append(str(to_binary(location)))
-
-
 # Based on 8 bits
 # First three bits is instruction opcode, last 5 bits is value
 memory = [
     [0, 0, 1, 0, 0, 1, 1, 0],  # Load Memory Location (7)
-    #SLOAD(6),
     [0, 1, 1, 0, 0, 1, 1, 1],  # Add Memory Location (6)
     [0, 1, 0, 0, 0, 1, 1, 0],  # Store New Number in Location (7)
     [1, 0, 0, 0, 0, 0, 0, 0],  # Jump to location (0)
