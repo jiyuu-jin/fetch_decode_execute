@@ -54,6 +54,18 @@ def get_from_ram():
 ```
 <br/>
 
+<p><b>update_program_counter:</b> The update_program_counter is used to update the program counter(pc) to either the next address or another jumped to memory location.</p>
+
+```
+def update_program_counter(value=False):
+    if value:
+        return value
+
+    binary = to_binary(pc) + 1
+    res2 = list(map(int, list(bin((1 << 8) + binary))[-8:]))
+
+    return res2
+```    
 
 ### Fetch:
 
