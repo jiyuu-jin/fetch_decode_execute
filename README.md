@@ -9,7 +9,7 @@
 ### Ram(Primary Memory)
 <p>The primary memory is emulated using a python List of Lists</p>
 
-'''
+```
 memory = [
     [0, 0, 1, 0, 0, 1, 1, 0],  # Load Memory Location (6)
     [0, 1, 1, 0, 0, 1, 1, 1],  # Add Memory Location (7)
@@ -24,7 +24,7 @@ memory = [
     [0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0],
 ]
-'''
+```
 
 
 ## Architectural Overview
