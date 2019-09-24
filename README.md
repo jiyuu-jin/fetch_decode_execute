@@ -26,6 +26,18 @@ memory = [
 ]
 ```
 
+### Instruction Opcode Definitions
+<p>The instruction opcodes are stored as key-value pairs in a python dictionary. Each key is a referenceable base two integer and each key-value is a callable function that executes the given instruction.</p>
+
+```
+instructions = {
+    0b000: pure,  # Pure Value
+    0b001: load,  # Load
+    0b010: store,  # Store
+    0b011: add,  # Add
+    0b100: jump  # Jump
+}
+```
 
 ## Architectural Overview
 
@@ -77,11 +89,31 @@ def decode_opcode(address_value):
 ``` 
 
 ### Fetch:
+```
+def fetch():
+    global mar, pc, mdr
+    mar = pc  # Load PC contents to MAR
+    print("mar:", mar)
+    pc = update_program_counter()  # Update program counter to next address
+    mdr = get_from_ram()  # Load Data Required to MDR
+    print("mdr:", mdr)
+```
 
 ### Decode:
+```
+def decode():
+    global cir
+    cir = decode_opcode(mdr)  # Load Current Instruction into CIR
+    print("---------------------------------")
+    print("Opcode: ", cir)
+```
 
 ### Execute:
-
+```
+def execute():
+    opcode = int("".join(str(x) for x in cir), 2)
+    instructions[opcode]()
+```
 
 
 ## Conclusions
