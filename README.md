@@ -143,6 +143,6 @@ while not Halt:  # While loop to simulate timing
 
 <p><b>Buffer Overflow</b></p>
 
-<p><b>Writing to a non-existant memory location/b></p>
+<p><b>Writing to a non-existant memory location</b></p>
     
 <p><b>Writing to restricted memory space</b></p>
