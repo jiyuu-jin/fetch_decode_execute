@@ -115,7 +115,34 @@ def execute():
     instructions[opcode]()
 ```
 
+### CPU Clock timing and Pipelining
+```
+while not Halt:  # While loop to simulate timing
+    cycle()    # Cycle
+
+    fetch()
+
+    if mdr is None:
+        break
+
+    if to_binary(ac) > 32:
+        print('\n', "Buffer overflow, Computed Highest Number", to_binary(ac))
+        break
+
+    decode()
+
+    execute()  # Perform Execution
+
+    print("---------------------------------")
+    print("acc:", ac, "\n", "\n")
+```
 
 ## Conclusions
 
+### Exception Handling
 
+<p><b>Buffer Overflow</b></p>
+
+<p><b>Writing to a non-existant memory location/b></p>
+    
+<p><b>Writing to restricted memory space</b></p>
