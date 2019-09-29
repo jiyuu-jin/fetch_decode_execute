@@ -146,3 +146,8 @@ while not Halt:  # While loop to simulate timing
 <p><b>Writing to a non-existant memory location</b></p>
     
 <p><b>Writing to restricted memory space</b></p>
+
+
+## Future Road Map
+
+<li>Implement 'And' and 'Or' Operations<li>
