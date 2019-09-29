@@ -41,8 +41,16 @@ instructions = {
 
 
 ### Pipeline Register
-<p>The curretn status of each instruction in the pipeline and what stage of the pipeline that it is in is stored at a given memory location of the pipeline register.</p>
+<p>The status of each instruction in the pipeline and what stage of the pipeline that it is currently in, is stored at a given memory location of the pipeline register.</p>
 
+```
+# Stores the current state of Instructions in Pipeline
+pipeline_register = [
+    [0, 0, 0, 0, 0, 0, 0, 1],  # Instruction n
+    [0, 0, 0, 0, 0, 0, 0, 1],  # Instruction n + 1
+    [0, 0, 0, 0, 0, 0, 0, 1],  # Instruction n + 2
+]
+```
 
 
 ## Architectural Overview
