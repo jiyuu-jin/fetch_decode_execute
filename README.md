@@ -142,11 +142,13 @@ while not Halt:  # While loop to simulate timing
 ### Exception Handling
 
 <p><b>Buffer Overflow</b></p>
+
 ```
  if to_binary(ac) > 32:
         print('\n', "Buffer overflow, Computed Highest Number", to_binary(ac))
         break
 ```
+
 ```
  if mdr is None:
         break
