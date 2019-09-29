@@ -143,11 +143,18 @@ while not Halt:  # While loop to simulate timing
 
 <p><b>Buffer Overflow</b></p>
 
+```
+ if mdr is None:
+        break
+```
+
 <p><b>Writing to a non-existant memory location</b></p>
     
 <p><b>Writing to restricted memory space</b></p>
 
 
 ## Future Road Map
-
-<li>Implement 'And' and 'Or' Operations<li>
+<ul>
+<li>Implement 'And' and 'Or' Operations</li>
+<li>Add a more robust check for Buffer overflows</li>
+</ul>
