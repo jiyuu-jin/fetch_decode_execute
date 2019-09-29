@@ -40,8 +40,8 @@ instructions = {
 ```
 
 
-### 
-<p>The instruction opcodes are stored as key-value pairs in a python dictionary. Each key is a referenceable base two integer and each key-value is a callable function that executes the given instruction.</p>
+### Pipeline Register
+<p>The curretn status of each instruction in the pipeline and what stage of the pipeline that it is in is stored at a given memory location of the pipeline register.</p>
 
 
 
@@ -92,6 +92,15 @@ def update_program_counter(value=False):
 def decode_opcode(address_value):
     address_value_binary = to_binary(address_value) >> 5
     return list(map(int, list(bin((1 << 8) + address_value_binary))[-3:]))
+``` 
+<br/>
+
+<p><b>get_current_stage:</b> The get_current_stage function is used to get the current stage of an instruction in the pipeline from the pipeline_register.</p>
+
+``` 
+def get_current_stage(location):
+    print(to_binary(pipeline_register[location]))
+    return to_binary(pipeline_register[location])
 ``` 
 
 ### Fetch:
