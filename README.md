@@ -39,6 +39,12 @@ instructions = {
 }
 ```
 
+
+### 
+<p>The instruction opcodes are stored as key-value pairs in a python dictionary. Each key is a referenceable base two integer and each key-value is a callable function that executes the given instruction.</p>
+
+
+
 ## Architectural Overview
 
 ### Helper Functions
@@ -125,8 +131,8 @@ def pipe_liner(location):
     else:
         next_stage = 1
 
-    global pipe_register
-    pipe_register[location] = list(map(int, list(bin((1 << 8) + next_stage))[-8:]))
+    global pipeline_register
+    pipeline_register[location] = list(map(int, list(bin((1 << 8) + next_stage))[-8:]))
 
     if stage == 1:
         fetch()
@@ -136,13 +142,21 @@ def pipe_liner(location):
         execute()
 
     return True
+
 ```
 
 ```
-while not Halt:  # While loop to simulate timing
+while not Halt:  # While loop to simulate timing with 2000ms sleep
     cycle()    # Cycle
 
-    fetch()
+    pipe_liner(0)
+
+    # if num_cycle > 1:
+    #    pipe_liner(1)
+    # if num_cycle > 2:
+    #    pipe_liner(2)
+
+    num_cycle += 1
 
     if mdr is None:
         break
@@ -150,10 +164,6 @@ while not Halt:  # While loop to simulate timing
     if to_binary(ac) > 32:
         print('\n', "Buffer overflow, Computed Highest Number", to_binary(ac))
         break
-
-    decode()
-
-    execute()  # Perform Execution
 
     print("---------------------------------")
     print("acc:", ac, "\n", "\n")
