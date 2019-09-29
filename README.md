@@ -117,6 +117,28 @@ def execute():
 
 ### CPU Clock timing and Pipelining
 ```
+def pipe_liner(location):
+    stage = get_current_stage(location)
+
+    if stage < 3:
+        next_stage = stage + 1
+    else:
+        next_stage = 1
+
+    global pipe_register
+    pipe_register[location] = list(map(int, list(bin((1 << 8) + next_stage))[-8:]))
+
+    if stage == 1:
+        fetch()
+    if stage == 2:
+        decode()
+    if stage == 3:
+        execute()
+
+    return True
+```
+
+```
 while not Halt:  # While loop to simulate timing
     cycle()    # Cycle
 
