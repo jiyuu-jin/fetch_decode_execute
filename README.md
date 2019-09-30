@@ -140,7 +140,7 @@ def execute():
 
 ### CPU Clock timing and Pipelining
 
-<p>There pipe_liner function accpets a memory location within the pipelining_registers that it will use to store the state of it's instruction between clock cycles. The fetch, decode, and execute processes are each assigned a respective integer value from 1 to 3. The function begins by calling the get intial stage function.<p>
+<p>There pipe_liner function accepts a memory location within the pipelining_registers that it will use to store the state of it's instruction between clock cycles. The fetch, decode, and execute processes are each assigned a respective integer value from 1 to 3. The function begins by calling the get_current_stage function and passing the location of the pipeline register. The current stage is then checked to either be in the fetch, decode or execute stage and the nincremented to the next stage.<p>
     
 ```
 def pipe_liner(location):
