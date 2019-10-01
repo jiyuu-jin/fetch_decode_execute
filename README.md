@@ -211,7 +211,17 @@ while not Interrupt:  # While loop to simulate timing with 2000ms sleep
 ```
 
 <p><b>Writing to a non-existant memory location</b></p>
-    
+
+```
+    try:
+        location = to_binary(mar)
+        return memory[location]
+    except IndexError:
+        print("\n", "Memory Address out of Range halting")
+        halt = True
+```
+
+
 <p><b>Writing to restricted memory space</b></p>
 
 
