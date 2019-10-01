@@ -168,8 +168,8 @@ def pipe_liner(location):
 <p>A python while loop and the time.sleep method are used to simulate the 2khz clockspeed of our virtual oscilator. Within the while loop the pip_liner funcrtion is called and passed a memory location in the pipeline register. A check is added for a none type object being returned in the mbr due to a failed value fetch from a memory location. A second check is also added to see if the accumulator has attempted to load a value that is greater than 2 ^ 5 bits resulting in a buffer overflow.</p>
 
 ```
-while not Halt:  # While loop to simulate timing with 2000ms sleep
-    cycle()    # Cycle
+while not Interrupt:  # While loop to simulate timing with 2000ms sleep
+    time.sleep(2)  # Simulate 2khz processor
 
     pipe_liner(0)
 
@@ -192,6 +192,8 @@ while not Halt:  # While loop to simulate timing with 2000ms sleep
 ```
 
 ## Conclusions
+
+<p>Throughout the process of attempting to simulate the fetch, decode, execute with a python algorithm I learned many things about pipelining, cpu timing and instruction set architectures. Originally my algorithm was based on a non-pipelined, single threaded CISC architecture but through continued devlopment it has slowly pivoted towards being a pipelined CISC arcetechure and in the future will be much closer to a classical RISC with pipelining.</p>
 
 ### Exception Handling
 
