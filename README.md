@@ -195,6 +195,18 @@ while not Interrupt:  # While loop to simulate timing with 2000ms sleep
 
 <p>Throughout the process of attempting to simulate the fetch, decode, execute with a python algorithm I learned many things about pipelining, cpu timing and instruction set architectures. Originally my algorithm was based on a non-pipelined, single threaded CISC architecture but through continued devlopment it has slowly pivoted towards being a pipelined CISC arcetechure and in the future will be much closer to a classical RISC with pipelining.</p>
 
+### Testing
+<p>In order to propperly test my simulated CPU architecture it was imperative for me to create a simple program composed of instructions to fully test the functionionaity of the code.  My program consists of the following instrctions.</p>
+
+<p># Load Memory Location (6)</p>
+<p># Add Memory Location (7)</p>
+<p># Store New Number in Location (6)</p>
+<p># Jump to location (0)</p>
+
+
+<p>The programs goal is to attempt to compute the largest number that it can by repeatedly adding the binary value 101 (5) to an incremented value. The instructions are storedd in the first four memeory addresses and are considered to be Read Only Memory so as to not compromise the function of the machine. The number used to add (101) is stored in memory location 7 and the number that it incremented/computed is stored in memory location 6.</p>
+
+
 ### Exception Handling
 
 <p><b>Buffer Overflow</b></p>
@@ -213,12 +225,12 @@ while not Interrupt:  # While loop to simulate timing with 2000ms sleep
 <p><b>Writing to a non-existant memory location</b></p>
 
 ```
-    try:
+     try:
         location = to_binary(mar)
         return memory[location]
     except IndexError:
         print("\n", "Memory Address out of Range halting")
-        halt = True
+        Interrupt = True
 ```
 
 
